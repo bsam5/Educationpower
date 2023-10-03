@@ -20,9 +20,19 @@ ol {
 body {
   font-family: sans-serif;
 }
+.padding-part {
+  padding: 80px 0;
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+}
 .container {
   width: 80%;
   margin: auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 :root {
   --btn-color: #f58634;
@@ -117,6 +127,7 @@ body {
 #header .nav-link.active a::after {
   scale: 1;
 }
+
 /* End header */
 /* start learn */
 #learn {
@@ -128,11 +139,13 @@ body {
   min-height: fit-content;
   display: grid;
   grid-template-columns: 50% 50%;
+  gap: 30px;
 }
 .learn-content .img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transform: translateY(2px);
 }
 .learn-content .img img {
   width: 400px;
@@ -183,9 +196,7 @@ body {
 }
 /* end learn */
 /* start quality */
-#quality {
-  padding: 80px 0;
-}
+
 #quality .quality-content {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -207,7 +218,6 @@ body {
 /* start courses*/
 #courses {
   background-color: var(--back-color);
-  padding: 80px 0;
 }
 #courses .content {
   text-align: center;
@@ -219,7 +229,8 @@ body {
 }
 .card {
   background: #fff;
-  max-width: 340px;
+  flex-grow: 1;
+  flex-basis: 260px;
   border-radius: 20px;
   overflow: hidden;
   text-align: start;
@@ -264,14 +275,12 @@ body {
 /* End courses  */
 /* start our-student  */
 #our-student {
-  padding: 80px 0;
   background-color: #fcfcfc;
 }
 #our-student .text {
   color: #000;
 }
 #our-student .btn-slide {
-  background: transparent;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -281,7 +290,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  transition: border 0.5s;
 }
 #our-student .next {
   border-color: #000;
@@ -298,10 +307,10 @@ body {
 
 #our-student .slides {
   gap: 40px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 #our-student .slide {
-  width: 48%;
+  width: 50%;
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
@@ -331,3 +340,152 @@ body {
   font-size: 16px;
 }
 /* End our-student  */
+
+@media (max-width: 1200px) {
+  #header .nav-link {
+    padding: 10px;
+  }
+  .btn {
+    padding: 10px 15px;
+  }
+  .heading {
+    font-size: 38px;
+  }
+  .text {
+    margin: 20px 0;
+  }
+}
+@media (max-width: 992px) {
+  nav {
+    display: none;
+  }
+  #learn .learn-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-top: 100px;
+  }
+  .learn-content .content {
+    height: 50%;
+  }
+  .learn-content .img {
+    height: 50%;
+  }
+  .learn-content .img img {
+    height: 100%;
+    width: auto;
+  }
+  #quality .quality-content {
+    column-gap: 20px;
+  }
+  .heading {
+    font-size: 35px;
+  }
+  .text {
+    margin: 15px 0;
+  }
+  #our-student .btn-slide {
+    height: 40px;
+    width: 40px;
+  }
+  #our-student .btn-slide:hover {
+    border-width: 8px;
+  }
+  #our-student .slides {
+    gap: 10px;
+  }
+  #our-student .user-img {
+    height: 60px;
+    width: 60px;
+  }
+  #our-student .slide {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #header {
+    padding: 15px;
+  }
+  #quality .quality-content {
+    grid-template-columns: 100%;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .text {
+    margin: 12px 0;
+  }
+  #our-student .slide > .text {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 580px) {
+  .heading {
+    font-size: 30px;
+  }
+  .text {
+    margin: 12px 0;
+  }
+  #our-student .text {
+    max-width: 380px;
+  }
+  #our-student .slide {
+    padding: 10px;
+  }
+  #our-student .name {
+    font-size: 18px;
+  }
+  #our-student .user-img {
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (max-width: 475px) {
+  #header .logo {
+    font-size: 20px;
+  }
+  .heading {
+    font-size: 22px;
+  }
+  .text {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  #our-student .text {
+    max-width: 266px;
+  }
+  #our-student .slides {
+    flex-wrap: wrap;
+  }
+  #our-student .slide {
+    padding: 15px;
+    width: 100%;
+  }
+  #our-student .slide > .text {
+    max-width: inherit;
+  }
+  #our-student .name {
+    font-size: 18px;
+  }
+  #our-student .user-img {
+    height: 50px;
+    width: 50px;
+  }
+  .learn-content .learn-search {
+    padding: 3px;
+    flex-wrap: wrap;
+  }
+  .learn-content .learn-search .btn {
+    flex: 1;
+  }
+}
+@media (max-width: 378px) {
+  .heading {
+    font-size: 18px;
+  }
+}
