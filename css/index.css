@@ -462,6 +462,12 @@ body {
   #header {
     padding: 15px;
   }
+  #navbar {
+    padding-top: 59px;
+  }
+  #menu {
+    top: 10px;
+  }
   #quality .quality-content {
     grid-template-columns: 100%;
     column-gap: 0;
